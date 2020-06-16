@@ -13,6 +13,7 @@ deploy:
   skip-cleanup: true
   keep-history: true
   local-dir: dist
-  target-branch: gh-pages
+  repo: BryanPan342/bryanpan342.github.io
+  target-branch: master
   on:
     branch: master
