@@ -26,11 +26,11 @@ function App() {
         <div>
         <Link to="/about"> about </Link>
         <Switch>
-            <Route exact path='/' component={Home}></Route>
-            <Route exact path='/about' component={About}></Route>
-            <Route exact path='/work' component={Work}></Route>
-            <Route exact path='/projects' component={Projects}></Route>
-            <Route exact path='/resume' component={Resume}></Route>
+            <Route path='/' component={Home}></Route>
+            <Route path='/about' component={About}></Route>
+            <Route path='/work' component={Work}></Route>
+            <Route path='/projects' component={Projects}></Route>
+            <Route path='/resume' component={Resume}></Route>
         </Switch>
         </div>
     );
