@@ -33,3 +33,4 @@ a {
     color: currentColor;
     text-decoration: none;
 }
+body{color:var(--text);background:var(--bg)}.fullscreen{width:100vw;height:100vh}.halfscreen{width:100vw;height:50vh}
