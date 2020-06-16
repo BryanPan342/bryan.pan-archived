@@ -1,0 +1,49 @@
+/* Table of Contents
+/* ------------------------------------------------------------
+
+This is a development CSS file which is built to a minified
+production stylesheet in assets/built/screen.css
+
+1.  Global Styles
+2.  Layout
+3.  Special Templates
+4.  Site Header
+5.  Site Navigation
+6.  Post Feed
+7.  Single Post
+  7.1. Subscribe Form
+  7.2. Post Footer
+  7.3. Comments
+  7.4. Related Posts
+  7.5. Floating Header
+8.  Author Template
+9.  Error Template
+10. Subscribe Overlay
+11. Site Footer
+
+*/
+
+
+/* 1. Global - Set up the things
+/* ---------------------------------------------------------- */
+@import "global.css";
+
+body {
+  color: var(--text);
+  background: var(--bg);
+}
+
+.fullscreen{
+  width: 100vw;
+  height: 100vh;
+}
+
+.halfscreen{
+  width: 100vw;
+  height: 50vh;
+}
+
+/* 2. Layout - Page building blocks
+/* ---------------------------------------------------------- */
+
+

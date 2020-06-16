@@ -1,0 +1,35 @@
+/* Variables
+/* ---------------------------------------------------------- */
+
+:root {
+    /* Colours */
+    --white: #FFFFFF;
+    --off-white: #F8F8F8;
+    --yellow: #FEC600;
+    --purple-base: #e7a9ff;
+    --purple-shadow-one: #5b00af;
+    --purple-shadow-two: #3c0074;
+    --black: #000000;
+    --off-black: #191919;
+}
+
+.edgy-yellow{
+    --bg: var(--off-white);
+    --cooler-bg: var(--yellow);
+    --title: var(--off-black);
+    --header-text: var(--yellow);
+    --reg-text: var(--off-black);
+    --shadow: none;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Frank Ruhl Libre';
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
