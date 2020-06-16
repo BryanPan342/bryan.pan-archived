@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+  - node_modules
+scripts:
+  - yarn build
+deploy:
+  provider: pages
+  committer-from-gh: true
+  skip-cleanup: true
+  keep-history: true
+  local-dir: build
+  target-branch: gh-pages
+  on:
+    branch: master

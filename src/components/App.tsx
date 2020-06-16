@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useWindowSize } from '../utils/Hooks';
-import { Link } from "react-router-dom";
-
-import {Switch, Route, Redirect } from 'react-router-dom';
+import {Switch, Route, Link, Redirect } from 'react-router-dom';
 
 import Home from './Home';
 import About from './About';
