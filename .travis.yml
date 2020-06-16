@@ -12,7 +12,7 @@ deploy:
   committer-from-gh: true
   skip-cleanup: true
   keep-history: true
-  local-dir: build
+  local-dir: dist
   target-branch: gh-pages
   on:
     branch: master
