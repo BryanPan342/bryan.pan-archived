@@ -6,7 +6,6 @@ const webpack = require('webpack');
 module.exports = {
     entry: {
         index: './src/index.tsx',
-        about: './src/index.tsx'
     },
 
     module: {
@@ -36,10 +35,5 @@ module.exports = {
             filename: './index.html'
         }),
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            template: './public/index.html',
-            filename: './about.html'
-        }),
-        new CleanWebpackPlugin()
     ]
 }
