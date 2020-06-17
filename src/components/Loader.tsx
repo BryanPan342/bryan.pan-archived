@@ -17,7 +17,6 @@ function Loader(props: LoaderProps){
         setTimeout(() =>{
             shoot_balls(t1);
             shoot_balls(t2);
-
             expand_center(t0);
         }, 1000 + t_offset);
 
@@ -25,7 +24,7 @@ function Loader(props: LoaderProps){
     }
 
     setTimeout(()=>{
-
+        console.log("done");
     }, 1000 + t_offset + 1000);
 
     return (

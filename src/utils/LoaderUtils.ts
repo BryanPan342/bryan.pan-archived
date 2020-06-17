@@ -27,10 +27,8 @@ export function shoot_balls(n:number){
 }
 
 export function expand_center(iter:number){
-    console.log(iter)
     let tgt:string = '.sun-center';
     let s:string = (30 + iter*30) + 'px';
-    console.log(s)
     anime({
         targets: tgt,
         width: s,
