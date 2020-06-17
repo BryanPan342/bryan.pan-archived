@@ -1,5 +1,5 @@
 import React from 'react';
-import {LoaderProps, shoot_balls, expand_center} from '../utils/LoaderUtils';
+import {LoaderProps, shoot_balls, expand_center, close_loader} from '../utils/LoaderUtils';
 import {random} from '../utils/common';
 
 function Loader(props: LoaderProps){
@@ -7,29 +7,28 @@ function Loader(props: LoaderProps){
 
     if (theme == 'edgy-yellow'){
         console.log('yellow')
-    }
+        var iter:number, t_offset:number = 0;
+        for (iter = 0; iter < 8; iter++){
+            let t0:number = iter;
+            let t1:number = iter*2 + 1;
+            let t2:number = iter*2 + 2;
+            setTimeout(() =>{
+                shoot_balls(t1);
+                shoot_balls(t2);
+                expand_center(t0);
+            }, 1000 + t_offset);
 
-    var iter:number, t_offset:number = 0;
-    for (iter = 0; iter < 8; iter++){
-        let t0:number = iter;
-        let t1:number = iter*2 + 1;
-        let t2:number = iter*2 + 2;
-        setTimeout(() =>{
-            shoot_balls(t1);
-            shoot_balls(t2);
-            expand_center(t0);
-        }, 1000 + t_offset);
-
-        t_offset += random(100,700);
+            t_offset += random(100,700);
+        }
     }
 
     setTimeout(()=>{
-        console.log("done");
+        close_loader(theme);
     }, 1000 + t_offset + 1000);
 
     return (
         <div className='loader-wrapper'>
-            {props.theme == 'edgy-yellow' ? 
+            {theme == 'edgy-yellow' ? 
                 <div className='loader fullscreen'>
                     <div className="sun">
                         <span className='balls_1'/>
