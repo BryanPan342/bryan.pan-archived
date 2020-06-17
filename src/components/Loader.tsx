@@ -6,7 +6,6 @@ function Loader(props: LoaderProps){
     const theme = props.theme;
 
     if (theme == 'edgy-yellow'){
-        console.log('yellow')
         var iter:number, t_offset:number = 0;
         for (iter = 0; iter < 8; iter++){
             let t0:number = iter;
@@ -51,9 +50,7 @@ function Loader(props: LoaderProps){
                     <div className='sun-center'/>
                 </div>
             :
-                <div>
-                    Unfortunate
-                </div>
+            <div className='loader'/>
             }
         </div>
     );

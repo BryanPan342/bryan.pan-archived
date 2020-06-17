@@ -17,6 +17,9 @@
     --bg: var(--off-white);
     --cooler-bg: var(--yellow);
     --loader-bg: var(--yellow);
+    --mini-bg: var(--off-black);
+    --mini-header: var(--yellow);
+    --mini-text: var(--off-white);
     --title: var(--off-black);
     --header-text: var(--yellow);
     --reg-text: var(--off-black);

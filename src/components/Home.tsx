@@ -1,8 +1,22 @@
 import React, { useState, useEffect } from 'react';
 function Home() {
     return (
-        <div className='body fullscreen'>
-            <h1> Home </h1>
+        <div id='home'>
+            <div className='body fullscreen' id='about'>
+                <h1> About </h1>
+            </div>
+            <div className='body halfscreen' id='personal'>
+                <h1> Personal Stuff </h1>
+            </div>
+            <div className='body fullscreen'>
+                <h1> Work </h1>
+            </div>
+            <div className='body halfscreen' id='skills'>
+                <h1> Skills </h1>
+            </div>
+            <div className='body fullscreen'>
+                <h1> Projects </h1>
+            </div>
         </div>
     );
 }

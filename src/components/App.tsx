@@ -8,7 +8,9 @@ import About from './About';
 import Work from './Work';
 import Projects from './Projects';
 import Resume from './Resume';
-import './styles/App.css';
+import Header from './Header';
+import './styles/App.scss';
+
 
 
 
@@ -16,11 +18,11 @@ function App() {
     const size = useWindowSize();
     const body = document.body;
     const [theme, setTheme] = useState('edgy-yellow');
-    const theme_select = (theme:string) => {setTheme(theme)}
+    const theme_select = (theme:string) => {setTheme(theme); location.reload();}
 
     useEffect(()=>{
         const stored_theme:string = localStorage.getItem('theme');
-        if (stored_theme){
+        if (stored_theme != theme){
             console.log(stored_theme)
             setTheme(stored_theme);
         }
@@ -28,15 +30,13 @@ function App() {
     },[]);
 
     useEffect(()=>{
-        console.log(localStorage.getItem('theme'));
         localStorage.setItem('theme', theme);
-        console.log(localStorage.getItem('theme'));
     }, [theme])
 
     return (
         <div>
-            <button className="expose" onClick = {()=>{theme_select(theme == 'edgy-yellow' ? 'retro-neon' : 'edgy-yellow')}}> Switch Theme </button>
             <Loader theme={theme}></Loader>
+            <Header theme={theme} theme_select={theme_select}></Header>
             <Switch>
                 <Route exact path='/' component={Home}></Route>
                 <Route exact path='/about' component={About}></Route>
@@ -45,6 +45,8 @@ function App() {
                 <Route exact path='/resume' component={Resume}></Route>
                 <Redirect to='/'></Redirect>
             </Switch>
+            <div className='fixed footer' id='scroll'> scroll </div>
+            <div className='fixed footer' id='top'> top </div>
         </div>
     );
 }
