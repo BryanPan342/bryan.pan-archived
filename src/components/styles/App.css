@@ -86,20 +86,21 @@ body {
   background: var(--bg);
   width: 30px;
   height: 30px;
-  
+  top: 165px;
+  left: 165px;
   border-radius: 50%;
   position: absolute;
 }
 
 .sun-center{
-  width: 240px;
-  height: 240px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   z-index: 4;
   background-color: var(--bg);
   position: absolute;
 }
-
+/* 
 .sun span:nth-child(1){
   top: 0px;
   left: calc(150px + 15px);
@@ -178,7 +179,7 @@ body {
 .sun span:nth-child(16){
   top: 12.56px;
   left: 101.86px;
-}
+} */
 
 
 @keyframes circle_rotation{
