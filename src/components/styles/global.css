@@ -16,6 +16,7 @@
 .edgy-yellow{
     --bg: var(--off-white);
     --cooler-bg: var(--yellow);
+    --loader-bg: var(--yellow);
     --title: var(--off-black);
     --header-text: var(--yellow);
     --reg-text: var(--off-black);

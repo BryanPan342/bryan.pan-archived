@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 function Home() {
     return (
-        <div>
+        <div className='body fullscreen'>
             <h1> Home </h1>
         </div>
     );

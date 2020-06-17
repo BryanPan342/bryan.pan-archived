@@ -6,7 +6,7 @@ production stylesheet in assets/built/screen.css
 
 1.  Global Styles
 2.  Layout
-3.  Special Templates
+3.  Loader
 4.  Site Header
 5.  Site Navigation
 6.  Post Feed
@@ -43,7 +43,149 @@ body {
   height: 50vh;
 }
 
+.body{
+  position: relative;
+  display: flex;
+  z-index: 1;
+}
+
 /* 2. Layout - Page building blocks
 /* ---------------------------------------------------------- */
 
+/* 3. Loader
+/* ---------------------------------------------------------- */
 
+.loader{
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  background: var(--loader-bg);
+  z-index: 2;
+}
+
+.loaded .loader{
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s;
+}
+
+.sun {
+  position: absolute;
+  height: 360px;
+  width: 360px;
+  z-index: 3;
+  border-radius: 50%;
+  animation: circle_rotation 8s infinite linear;
+}
+
+.sun span{
+  background: var(--bg);
+  width: 30px;
+  height: 30px;
+  
+  border-radius: 50%;
+  position: absolute;
+}
+
+.sun-center{
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  z-index: 4;
+  background-color: var(--bg);
+  position: absolute;
+}
+
+.sun span:nth-child(1){
+  top: 0px;
+  left: calc(150px + 15px);
+}
+
+.sun span:nth-child(2){
+  top: calc(300px + 30px);
+  left: calc(150px + 15px);
+}
+
+.sun span:nth-child(3){
+  top: calc(150px + 15px);
+  left: calc(300px + 30px);
+}
+
+.sun span:nth-child(4){
+  top: calc(150px + 15px);
+  left: 0px;
+}
+
+.sun span:nth-child(5){
+  top: calc(30px + 18.33px);
+  left: calc(300px - 18.33px);
+}
+
+.sun span:nth-child(6){
+  top: calc(300px - 18.33px);
+  left: calc(30px + 18.33px);
+}
+
+.sun span:nth-child(7){
+  top: calc(30px + 18.33px);
+  left: calc(30px + 18.33px);
+}
+
+.sun span:nth-child(8){
+  top: calc(300px - 18.33px);
+  left: calc(300px - 18.33px);
+}
+
+.sun span:nth-child(9){
+  top: 12.56px;
+  left: 228.14px;
+}
+
+.sun span:nth-child(10){
+  top: 317.44px;
+  left: 101.86px;
+}
+
+.sun span:nth-child(11){
+  top: 101.86px;
+  left: 317.44px;
+}
+
+.sun span:nth-child(12){
+  top: 228.14px;
+  left: 12.56px;
+}
+
+.sun span:nth-child(13){
+  top: 228.14px;
+  left: 317.44px;
+}
+
+.sun span:nth-child(14){
+  top: 101.86px;
+  left: 12.56px;
+}
+
+.sun span:nth-child(15){
+  top: 317.44px;
+  left: 228.14px;
+}
+
+.sun span:nth-child(16){
+  top: 12.56px;
+  left: 101.86px;
+}
+
+
+@keyframes circle_rotation{
+  from {
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}

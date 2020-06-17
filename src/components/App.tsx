@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useWindowSize } from '../utils/Hooks';
 import {Switch, Route, Link, Redirect } from 'react-router-dom';
 
+import Loader from './Loader';
 import Home from './Home';
 import About from './About';
 import Work from './Work';
@@ -11,10 +12,10 @@ import './styles/App.css';
 
 function App() {
     const size = useWindowSize();
-    const theme = localStorage.getItem('theme');
+    const theme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'edgy-yellow';
     const body = document.body;
 
-    body.classList.add(theme ? theme : 'edgy-yellow')
+    body.classList.add(theme)
     if (theme){
         body.classList.add(theme)
     }else{
@@ -24,7 +25,7 @@ function App() {
 
     return (
         <div>
-            <Link to="/about"> about </Link>
+            <Loader theme={theme}></Loader>
             <Switch>
                 <Route exact path='/' component={Home}></Route>
                 <Route exact path='/about' component={About}></Route>
