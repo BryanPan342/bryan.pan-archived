@@ -1,4 +1,5 @@
 import anime from 'animejs';
+import {enable_scroll} from './AppUtils';
 
 /*
 Prop Interface
@@ -77,5 +78,6 @@ export function close_loader(theme:string){
     }
     setTimeout(()=>{
         body.classList.add('loaded');
+        enable_scroll();
     }, 900);
 }

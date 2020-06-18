@@ -9,21 +9,28 @@ import Work from './Work';
 import Projects from './Projects';
 import Resume from './Resume';
 import Header from './Header';
+import Nav from './Nav';
 import './styles/App.scss';
 
-
-
+import {disable_scroll, enable_scroll, animate_nav} from '../utils/AppUtils';
 
 function App() {
     const size = useWindowSize();
     const body = document.body;
     const [theme, setTheme] = useState('edgy-yellow');
-    const theme_select = (theme:string) => {setTheme(theme); location.reload();}
+    const theme_select = (theme:string) => {
+        setTheme(theme); 
+        location.reload();
+    }
+    const [isNav, toggleNav] = useState(false);
+    const toggle_nav = () => {
+        animate_nav(isNav);
+        toggleNav(!isNav);
+    }
 
     useEffect(()=>{
         const stored_theme:string = localStorage.getItem('theme');
         if (stored_theme != theme){
-            console.log(stored_theme)
             setTheme(stored_theme);
         }
         body.classList.add(theme)
@@ -36,7 +43,8 @@ function App() {
     return (
         <div>
             <Loader theme={theme}></Loader>
-            <Header theme={theme} theme_select={theme_select}></Header>
+            <Header toggle_nav={toggle_nav}></Header>
+            <Nav theme_select={theme_select}></Nav>
             <Switch>
                 <Route exact path='/' component={Home}></Route>
                 <Route exact path='/about' component={About}></Route>
