@@ -1,6 +1,8 @@
 import React from 'react';
-import {LoaderProps, shoot_balls, expand_center, close_loader} from '../utils/LoaderUtils';
-import {random} from '../utils/common';
+
+import {LoaderProps} from '../utils/props';
+import {shoot_balls, expand_center, close_loader} from '../utils/animation';
+import {random} from '../utils/utility';
 
 function Loader(props: LoaderProps){
     const theme = props.theme;

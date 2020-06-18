@@ -12,7 +12,9 @@ import Header from './Header';
 import Nav from './Nav';
 import './styles/App.scss';
 
-import {disable_scroll, enable_scroll, animate_nav} from '../utils/AppUtils';
+import {disable_scroll, enable_scroll} from '../utils/utility';
+import {animate_nav} from '../utils/animation';
+
 
 function App() {
     const size = useWindowSize();

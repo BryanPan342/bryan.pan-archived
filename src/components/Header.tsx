@@ -1,5 +1,5 @@
 import React from 'react';
-import {Themes, HeaderProps} from '../utils/AppUtils'
+import { HeaderProps} from '../utils/props';
 
 function Header(props: HeaderProps){
     const toggle_nav = props.toggle_nav;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 function Home() {
     return (
         <div id='home'>
+            <div id='hello-block'></div>
             <div className='body fullscreen' id='about'>
                 <h1> About </h1>
             </div>

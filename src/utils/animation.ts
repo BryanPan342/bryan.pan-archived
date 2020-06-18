@@ -1,11 +1,29 @@
 import anime from 'animejs';
-import {enable_scroll} from './AppUtils';
+import {enable_scroll, disable_scroll} from './utility';
 
-/*
-Prop Interface
-*/
-export interface LoaderProps {
-    theme: string
+/*************************** 
+*      NAV ANIMATIONS      *
+****************************/
+
+export function animate_nav(isNav: boolean){
+    const tgt = '.nav';
+    if(isNav){
+        anime({
+            targets: tgt,
+            translateX: '100%',
+            duration: 500,
+            easing: 'easeOutQuad'
+        });
+        enable_scroll();
+    }else{
+        anime({
+            targets: tgt,
+            translateX: '0%',
+            duration: 500,
+            easing: 'easeOutQuad'
+        });
+        disable_scroll();
+    }
 }
 
 /*************************** 
@@ -61,23 +79,27 @@ export function close_loader(theme:string){
                 targets: b_tgt,
                 translateX: x,
                 translateY: y,
+                opacity: [
+                    {value: 0, duration: 300, delay: 200, easing: 'easeInQuad'}
+                ],
                 easing: 'easeOutQuad',
-                delay: d,
-                duration: 400,
+                duration: 200,
             });
-            d += 50;
         }
         anime({
             targets: s_tgt,
-            width: '0px',
-            height: '0px',
-            easing: 'easeOutQuad',
-            duration: 400,
+            scale: [
+                {value: .25, duration:300, easing: 'easeOutQuad'},
+                {value: .4, duration:300, easing: 'easeInQuad'},
+                {value: .15, duration:300, easing: 'easeOutQuad'},
+                {value: 50, duration:600, easing:'easeInQuad'}
+            ],
+            duration: 1000,
         });
         
     }
     setTimeout(()=>{
         body.classList.add('loaded');
         enable_scroll();
-    }, 900);
+    }, 1200);
 }

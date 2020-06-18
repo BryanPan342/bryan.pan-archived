@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavProps} from '../utils/AppUtils';
+import {NavProps} from '../utils/props';
 
 function Nav(props: NavProps){
     const theme_select = props.theme_select;
