@@ -6,6 +6,7 @@ export function disable_scroll(){
 }
 
 export function enable_scroll(){
+    console.log('enabling');
     document.body.classList.remove('disable-scroll');
 }
 

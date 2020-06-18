@@ -6,6 +6,7 @@ import {enable_scroll, disable_scroll} from './utility';
 ****************************/
 
 export function animate_nav(isNav: boolean){
+    console.log(isNav);
     const tgt = '.nav';
     if(isNav){
         anime({
@@ -118,5 +119,25 @@ export function hello_block(theme:string){
             easing: 'spring(1, 80, 10, 0)',
         })
     }
+    document.body.classList.add('showHello');
+}
+
+export function hide_hello(){
+    console.log('hide');
+    anime({
+        targets: '#hello-block',
+        translateX: '100%',
+        duration: 500,
+        easing: 'spring(1, 80, 10, 0)',
+    })
+    document.body.classList.remove('showHello');
+}
+export function show_hello(){
+    anime({
+        targets: '#hello-block',
+        translateX: '50%',
+        duration: 500,
+        easing: 'spring(1, 80, 10, 0)',
+    })
     document.body.classList.add('showHello');
 }
