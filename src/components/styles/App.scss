@@ -75,7 +75,7 @@ body {
 .loaded .loader{
   visibility: hidden;
   opacity: 0;
-  transition: all .3s .5s;
+  transition: all .3s;
 }
 
 .sun {
@@ -90,7 +90,7 @@ body {
 .loaded .sun{
   visibility: hidden;
   opacity: 0;
-  transition: all .2s;
+  transition: all .3s;
 }
 
 .sun span{

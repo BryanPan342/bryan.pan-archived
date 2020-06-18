@@ -96,10 +96,27 @@ export function close_loader(theme:string){
             ],
             duration: 1000,
         });
-        
     }
     setTimeout(()=>{
         body.classList.add('loaded');
         enable_scroll();
-    }, 1200);
+        hello_block(theme);
+    }, 1300);
+}
+
+/*************************** 
+*     HOME ANIMATIONS      *
+****************************/
+
+export function hello_block(theme:string){
+    if (theme == 'edgy-yellow'){
+        anime({
+            targets: '#hello-block',
+            translateX: '50%',
+            delay: 300,
+            duration: 500,
+            easing: 'spring(1, 80, 10, 0)',
+        })
+    }
+    document.body.classList.add('showHello');
 }
