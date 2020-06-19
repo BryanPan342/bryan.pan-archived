@@ -3,9 +3,14 @@ import React, {useEffect} from 'react';
 import {LoaderProps} from '../utils/props';
 import {shoot_balls, expand_center, close_loader} from '../utils/animation';
 import {random, disable_scroll} from '../utils/utility';
+import {useWindowSize} from '../utils/hooks';
 
 function Loader(props: LoaderProps){
     const theme = props.theme;
+    let m: number = 1;
+    if (/Mobi|Android/i.test(navigator.userAgent) && window.matchMedia( "(max-width: 480px)").matches){
+        m = 2/3;
+    }
 
     useEffect(()=>{
         disable_scroll('loader');
@@ -16,9 +21,9 @@ function Loader(props: LoaderProps){
                 let t1:number = iter*2 + 1;
                 let t2:number = iter*2 + 2;
                 setTimeout(() =>{
-                    shoot_balls(t1);
-                    shoot_balls(t2);
-                    expand_center(t0);
+                    shoot_balls(t1, m);
+                    shoot_balls(t2, m);
+                    expand_center(t0, m);
                 }, 1000 + t_offset);
     
                 t_offset += random(100,700);
@@ -26,7 +31,7 @@ function Loader(props: LoaderProps){
         }
     
         setTimeout(()=>{
-            close_loader(theme);
+            close_loader(theme, m);
         }, 1000 + t_offset + 1000);
     }, []);
 

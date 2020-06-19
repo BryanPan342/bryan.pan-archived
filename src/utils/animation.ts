@@ -12,8 +12,8 @@ export function animate_nav(isNav: boolean){
         anime({
             targets: tgt,
             width: '0%',
-            duration: 500,
-            easing: 'easeOutQuad'
+            duration: 600,
+            easing: 'easeInOutExpo'
         });
     }else{
         disable_scroll('nav');
@@ -21,7 +21,7 @@ export function animate_nav(isNav: boolean){
             targets: tgt,
             width: '100%',
             duration: 500,
-            easing: 'easeOutQuad'
+            easing: 'spring(1, 60, 12, 0)',
         });
     }
 }
@@ -40,10 +40,10 @@ const ball_offsets:number[][] = [[0, 165], [330, 165],
 
 const ball_reset:number[] = [1, 9, 5, 11, 3, 13, 7, 15, 2, 10, 6, 12, 4, 14, 8, 16];
 
-export function shoot_balls(n:number){
+export function shoot_balls(n:number, m: number){
     let tgt:string = '.balls_' + n.toString();
-    let tp:string = ball_offsets[n-1][0].toString() + 'px';
-    let lft:string = ball_offsets[n-1][1].toString() + 'px';
+    let tp:string = (m*ball_offsets[n-1][0]).toString() + 'px';
+    let lft:string =(m*ball_offsets[n-1][1]).toString() + 'px';
     anime({
         targets: tgt,
         top: tp,
@@ -53,9 +53,9 @@ export function shoot_balls(n:number){
     });
 }
 
-export function expand_center(iter:number){
+export function expand_center(iter:number, m:number){
     let tgt:string = '.sun-center';
-    let s:string = (30 + iter*30) + 'px';
+    let s:string = (30 + iter*30)*m + 'px';
     anime({
         targets: tgt,
         width: s,
@@ -65,7 +65,7 @@ export function expand_center(iter:number){
     });
 }
 
-export function close_loader(theme:string){
+export function close_loader(theme:string, m:number){
     const body = document.body;
     if(theme == 'edgy-yellow'){
         let s_tgt:string = '.sun-center';
@@ -73,8 +73,8 @@ export function close_loader(theme:string){
         for (i = 0; i < 16; i++){
             iter = ball_reset[i];
             let b_tgt:string = '.balls_' + iter;
-            let x:number = 165 - ball_offsets[iter-1][1];
-            let y:number = 165 - ball_offsets[iter-1][0];
+            let x:number = m*(165 - ball_offsets[iter-1][1]);
+            let y:number = m*(165 - ball_offsets[iter-1][0]);
             anime({
                 targets: b_tgt,
                 translateX: x,
