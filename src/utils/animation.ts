@@ -146,7 +146,14 @@ export function hide_hello(){
         targets: '#hello-block',
         translateX: '100%',
         duration: 750,
-        easing: 'spring(1, 80, 10, 0)',
+        easing: 'spring(1, 60, 12, 0)',
+    });
+    anime({
+        targets: '#hello',
+        translateX: '50%',
+        delay: 100,
+        duration: 650,
+        easing: 'spring(1, 60, 12, 0)',
     });
     document.body.classList.remove('showHello');
 }
@@ -155,7 +162,14 @@ export function show_hello(){
         targets: '#hello-block',
         translateX: '50%',
         duration: 750,
-        easing: 'spring(1, 80, 10, 0)',
-    })
+        easing: 'spring(1, 60, 10, 0)',
+    });
+    anime({
+        targets: '#hello',
+        translateX: '0%',
+        delay: 100,
+        duration: 650,
+        easing: 'spring(1, 60, 10, 0)',
+    });
     document.body.classList.add('showHello');
 }
