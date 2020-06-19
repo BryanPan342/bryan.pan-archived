@@ -3,19 +3,23 @@ import {hide_hello, show_hello} from '../utils/animation';
 
 function Home() {
     const [offset, setOffset] = useState(0);
-    const [animating, setAnimating] = useState(false);
+    const [parallax, setParallax] = useState(0);
 
     const handleScroll = () => {
         const showingHello = document.body.classList.contains('showHello');
         const about = document.getElementById("about");
-        const bounding = about.getBoundingClientRect();
+        const about_bounding = about.getBoundingClientRect();
+        const hello = document.getElementById('hello');
+        const hello_bounding = hello.getBoundingClientRect();
         if(showingHello){
             hide_hello();
         }
-        if(bounding.top == 0 && !showingHello){
+        else if(offset <= 0 && about_bounding.top == 0 && !showingHello){
             show_hello();
+        }else if (!showingHello){
+            
         }
-        setOffset(bounding.top);
+        setOffset(about_bounding.top);
     };
 
     useEffect(() => {

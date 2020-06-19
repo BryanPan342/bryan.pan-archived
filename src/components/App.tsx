@@ -27,7 +27,6 @@ function App() {
         animate_nav(isNav);
         toggleNav(!isNav);
     }
-
     useEffect(()=>{
         const stored_theme:string = localStorage.getItem('theme');
         if (stored_theme != theme){
