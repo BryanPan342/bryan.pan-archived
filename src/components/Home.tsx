@@ -1,29 +1,54 @@
 import React, { useState, useEffect } from 'react';
+import {useWindowSize} from '../utils/hooks';
 import {hide_hello, show_hello} from '../utils/animation';
 
 function Home() {
+    const size:{width: number, height: number} = useWindowSize();
     const [offset, setOffset] = useState(0);
-    const [parallax, setParallax] = useState(0);
+    const [parallax, setParallax] = useState(true);
+    var hello_original_bounding:any;
+
+    var hello_parallax_condition = -1 * size.height;
 
     const handleScroll = () => {
         const showingHello = document.body.classList.contains('showHello');
+        const parallax = document.body.classList.contains('parallax');
         const about = document.getElementById("about");
         const about_bounding = about.getBoundingClientRect();
         const hello = document.getElementById('hello');
         const hello_bounding = hello.getBoundingClientRect();
+        
         if(showingHello){
             hide_hello();
         }
         else if(offset <= 0 && about_bounding.top == 0 && !showingHello){
+            document.body.classList.add('parallax');
             show_hello();
         }else if (!showingHello){
-            
+            if(about_bounding.top > (hello_parallax_condition)){
+                hello.style.position = 'fixed';
+                if (parallax){
+                    console.log('fix');
+                    document.body.classList.remove('parallax');
+                    hello.style.top = "";
+                }
+            }else if(about_bounding.top > (hello_parallax_condition * 3)){
+                hello.style.position = 'absolute';
+                if (!parallax){
+                    console.log('not fixed');
+                    document.body.classList.add('parallax');
+                    console.log(hello.style);
+                    hello.style.top = (-1 * hello_parallax_condition) + "px";
+                    console.log(hello.style.top);
+                } 
+            }
         }
         setOffset(about_bounding.top);
     };
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll, { passive: true });
+        hello_original_bounding = document.getElementById('hello').getBoundingClientRect();
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };

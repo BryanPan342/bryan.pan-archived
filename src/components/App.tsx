@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useWindowSize } from '../utils/Hooks';
+import { useWindowSize } from '../utils/hooks';
 import {Switch, Route, Link, Redirect } from 'react-router-dom';
 
 import Loader from './Loader';

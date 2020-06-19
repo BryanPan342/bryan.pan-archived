@@ -98,7 +98,7 @@ export function close_loader(theme:string){
         });
     }
     setTimeout(()=>{
-        body.classList.add('loaded');
+        body.classList.add('loaded', 'parallax');
         enable_scroll();
         hello_block(theme);
     }, 1300);
@@ -151,8 +151,8 @@ export function hide_hello(){
     anime({
         targets: '#hello',
         translateX: '50%',
-        delay: 100,
-        duration: 650,
+        delay: 50,
+        duration: 700,
         easing: 'spring(1, 60, 12, 0)',
     });
     document.body.classList.remove('showHello');
@@ -167,8 +167,8 @@ export function show_hello(){
     anime({
         targets: '#hello',
         translateX: '0%',
-        delay: 100,
-        duration: 650,
+        delay: 50,
+        duration: 700,
         easing: 'spring(1, 60, 10, 0)',
     });
     document.body.classList.add('showHello');
