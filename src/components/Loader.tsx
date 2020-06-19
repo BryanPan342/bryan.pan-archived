@@ -1,31 +1,34 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import {LoaderProps} from '../utils/props';
 import {shoot_balls, expand_center, close_loader} from '../utils/animation';
-import {random} from '../utils/utility';
+import {random, disable_scroll} from '../utils/utility';
 
 function Loader(props: LoaderProps){
     const theme = props.theme;
 
-    if (theme == 'edgy-yellow'){
-        var iter:number, t_offset:number = 0;
-        for (iter = 0; iter < 8; iter++){
-            let t0:number = iter;
-            let t1:number = iter*2 + 1;
-            let t2:number = iter*2 + 2;
-            setTimeout(() =>{
-                shoot_balls(t1);
-                shoot_balls(t2);
-                expand_center(t0);
-            }, 1000 + t_offset);
-
-            t_offset += random(100,700);
+    useEffect(()=>{
+        disable_scroll('loader');
+        if (theme == 'edgy-yellow'){
+            var iter:number, t_offset:number = 0;
+            for (iter = 0; iter < 8; iter++){
+                let t0:number = iter;
+                let t1:number = iter*2 + 1;
+                let t2:number = iter*2 + 2;
+                setTimeout(() =>{
+                    shoot_balls(t1);
+                    shoot_balls(t2);
+                    expand_center(t0);
+                }, 1000 + t_offset);
+    
+                t_offset += random(100,700);
+            }
         }
-    }
-
-    setTimeout(()=>{
-        close_loader(theme);
-    }, 1000 + t_offset + 1000);
+    
+        setTimeout(()=>{
+            close_loader(theme);
+        }, 1000 + t_offset + 1000);
+    }, []);
 
     return (
         <div className='loader-wrapper'>

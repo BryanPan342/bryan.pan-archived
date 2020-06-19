@@ -29,13 +29,12 @@ production stylesheet in assets/built/screen.css
 @import "global.css";
 
 body {
-  overflow-x: hidden;
   color: var(--text);
   background: var(--bg);
 }
 
 .disable-scroll {
-  overflow-y: hidden;
+  overflow-y: hidden !important;
 }
 
 /* 2. Layout - Page building blocks
@@ -57,6 +56,11 @@ body {
   z-index: 1;
 }
 
+#site-wrapper{
+  overflow-x: hidden;
+  position: relative;
+}
+
 /* 3. Loader
 /* ---------------------------------------------------------- */
 
@@ -69,7 +73,7 @@ body {
   align-items: center;
   position: fixed;
   background: var(--loader-bg);
-  z-index: 5;
+  z-index: 100;
 }
 
 .loaded .loader{
@@ -82,7 +86,7 @@ body {
   position: absolute;
   height: 360px;
   width: 360px;
-  z-index: 6;
+  z-index: 101;
   border-radius: 50%;
   animation: circle_rotation 8s infinite linear;
 }
@@ -107,7 +111,7 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  z-index: 7;
+  z-index: 102;
   background-color: var(--bg);
   position: absolute;
 }
@@ -131,7 +135,7 @@ body {
 }
 
 .header{
-  z-index: 4;
+  z-index: 99;
   top: 0px;
   right: 0px;
 }
@@ -154,12 +158,20 @@ body {
 .nav {
   background: var(--cooler-bg);
   color: var(--text);
-  z-index: 3;
+  z-index: 98;
+  right: 0;
+  height: 100vh;
+  width: 0;
   position: fixed;
-  button{
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
+  .nav-content{
+    position: relative;
+    top: 25%;
+    width: 100%;
+    button{
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+    }
   }
 }
 
@@ -169,6 +181,19 @@ body {
 #home .wrapper{
   position: relative;
   height: calc(100vh + 50vh);
+}
+
+#home #hello{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  // top: calc(50vh - 100px);
+  // left: calc(50vw - 140px);
+  z-index: 4;
 }
 
 #home #hello-block{

@@ -12,9 +12,7 @@ import Header from './Header';
 import Nav from './Nav';
 import './styles/App.scss';
 
-import {disable_scroll, enable_scroll} from '../utils/utility';
 import {animate_nav} from '../utils/animation';
-
 
 function App() {
     const size = useWindowSize();
@@ -43,7 +41,7 @@ function App() {
     }, [theme])
 
     return (
-        <div>
+        <div id='site-wrapper'>
             <Loader theme={theme}></Loader>
             <Header toggle_nav={toggle_nav}></Header>
             <Nav theme_select={theme_select}></Nav>

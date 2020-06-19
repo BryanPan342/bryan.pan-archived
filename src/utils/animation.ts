@@ -6,24 +6,23 @@ import {enable_scroll, disable_scroll} from './utility';
 ****************************/
 
 export function animate_nav(isNav: boolean){
-    console.log(isNav);
     const tgt = '.nav';
     if(isNav){
-        anime({
-            targets: tgt,
-            translateX: '100%',
-            duration: 500,
-            easing: 'easeOutQuad'
-        });
         enable_scroll();
-    }else{
         anime({
             targets: tgt,
-            translateX: '0%',
+            width: '0%',
             duration: 500,
             easing: 'easeOutQuad'
         });
-        disable_scroll();
+    }else{
+        disable_scroll('nav');
+        anime({
+            targets: tgt,
+            width: '100%',
+            duration: 500,
+            easing: 'easeOutQuad'
+        });
     }
 }
 
@@ -117,26 +116,45 @@ export function hello_block(theme:string){
             delay: 300,
             duration: 500,
             easing: 'spring(1, 80, 10, 0)',
+        });
+        anime({
+            targets: '#hello .lines .words',
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutExpo',
+            duration: 2500,
+            fill: [
+                {value: '#191919', delay: 1500, duration: 500, easing: 'easeInExpo' }
+            ],
+            delay: 500,
+        });
+        anime({
+            targets: '#hello .lines .dot',
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInExpo',
+            duration: 1000,
+            fill: [
+                {value: '#FEC600', delay: 1000, duration: 500, easing: 'easeInExpo' }
+            ],
+            delay: 500,
         })
     }
     document.body.classList.add('showHello');
 }
 
 export function hide_hello(){
-    console.log('hide');
     anime({
         targets: '#hello-block',
         translateX: '100%',
-        duration: 500,
+        duration: 750,
         easing: 'spring(1, 80, 10, 0)',
-    })
+    });
     document.body.classList.remove('showHello');
 }
 export function show_hello(){
     anime({
         targets: '#hello-block',
         translateX: '50%',
-        duration: 500,
+        duration: 750,
         easing: 'spring(1, 80, 10, 0)',
     })
     document.body.classList.add('showHello');
