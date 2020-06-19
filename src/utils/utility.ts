@@ -4,10 +4,14 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
 *     UTILITY FUNCTIONS    *
 ****************************/
 export function disable_scroll(element: string){
-    disableBodyScroll(document.getElementById(element))
+    const root = document.getElementById('root');
+    root.classList.add('disable-scroll');
+    disableBodyScroll(document.getElementById(element));
 }
 
 export function enable_scroll(){
+    const root = document.getElementById('root');
+    root.classList.remove('disable-scroll');
     clearAllBodyScrollLocks();
 }
 
