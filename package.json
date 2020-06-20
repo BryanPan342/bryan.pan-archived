@@ -22,7 +22,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "rellax": "^1.12.1"
+    "url-loader": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
