@@ -9,6 +9,7 @@ function Nav(props: NavProps){
     // TODO - ADD THEME ICONS
     // TODO - ADD HIGHLIGHT FOR CURRENT PATH (window.location.pathname)
     // TODO - ADD HOVER TO ROUTES
+    // TODO - MOBILE FRIENDLY
     return(
         <div className='nav'>
             <div className='nav-content'>
