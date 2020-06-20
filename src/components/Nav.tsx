@@ -18,15 +18,19 @@ function Nav(props: NavProps){
                 <div className='themes'>
                     <div className='theme-container' onClick = {()=>{theme_select('edgy-yellow')}}> 
                         <h2>Edgy-Yellow</h2>
+                        <h4>everyone's a little edgy</h4>
                     </div>
                     <div className='theme-container' onClick = {()=>{theme_select('retro-neon')}}> 
                         <h2>Retro-Neon</h2>
+                        <h4>cooler than you think</h4>
                     </div>
                     <div className='theme-container' onClick = {()=>{theme_select('simply-made')}}> 
                         <h2>Simply-Made</h2> 
+                        <h4>sounds like yogurt slogan</h4>
                     </div>
                     <div className='theme-container' onClick = {()=>{console.log('devloper mode')}}>
                         <h2>Dev-Friendly</h2>
+                        <h4>when design gets tiring</h4>
                     </div>
                 </div>
                 <Social/>
