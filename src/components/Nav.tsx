@@ -1,4 +1,5 @@
 import React from 'react';
+import Social from './Social';
 import {NavProps} from '../utils/props';
 
 function Nav(props: NavProps){
@@ -6,8 +7,29 @@ function Nav(props: NavProps){
     return(
         <div className='nav'>
             <div className='nav-content'>
-                <button onClick = {()=>{theme_select('edgy-yellow')}}> Yellow </button>
-                <button onClick = {()=>{theme_select('retro-neon')}}> Neon </button>
+                <div className='routes'>
+                    <a id='home' href='/'> <h1>HOME</h1> </a>
+                    <a id='about' href='/about'> <h1>ABOUT</h1> </a>
+                    <a id='work' href='/work'> <h1>WORK</h1> </a>
+                    <a id='projects' href='/projects'> <h1>PROJECTS</h1> </a>
+                    <a id='resume' href='/resume'> <h1>RESUME</h1> </a>
+                </div>
+
+                <div className='themes'>
+                    <div className='theme-container' onClick = {()=>{theme_select('edgy-yellow')}}> 
+                        <h2>Edgy-Yellow</h2>
+                    </div>
+                    <div className='theme-container' onClick = {()=>{theme_select('retro-neon')}}> 
+                        <h2>Retro-Neon</h2>
+                    </div>
+                    <div className='theme-container' onClick = {()=>{theme_select('simply-made')}}> 
+                        <h2>Simply-Made</h2> 
+                    </div>
+                    <div className='theme-container' onClick = {()=>{console.log('devloper mode')}}>
+                        <h2>Dev-Friendly</h2>
+                    </div>
+                </div>
+                <Social/>
             </div>
         </div>
     )

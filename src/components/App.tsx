@@ -2,8 +2,8 @@
  *       DEPENDENCIES        *
  *****************************/
 import React, { useState, useEffect } from 'react';
-import { useWindowSize } from '../utils/hooks';
-import {Switch, Route, Link, Redirect } from 'react-router-dom';
+
+import {Switch, Route, Redirect } from 'react-router-dom';
 
 /*****************************
  *   UNIVSERAL COMPONENTS    *
@@ -15,6 +15,7 @@ import Nav from './Nav';
 
 import {animate_nav} from '../utils/animation';
 import {isValidTheme} from '../utils/utility';
+import { useWindowSize } from '../utils/hooks';
 import './styles/App.scss';
 
 /*****************************

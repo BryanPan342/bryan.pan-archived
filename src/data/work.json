@@ -1,0 +1,15 @@
+{
+    "amazon": {
+        "company": "Amazon",
+        "division": "Amazon Web Services", 
+        "title": "Software Development Engineering Intern",
+        "team": "Cloud Development Kit",
+        "project-description": "",
+        "project-link": "https://github.com/aws/aws-cdk",
+        "overview": "",
+        "contribution": "",
+        "skills-used": ""
+    },
+    "boozallen": {},
+    "kingstar": {}
+}

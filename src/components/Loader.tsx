@@ -26,7 +26,7 @@ function Loader(props: LoaderProps){
                     expand_center(t0, m);
                 }, 1000 + t_offset);
     
-                t_offset += random(100,700);
+                t_offset += (random(1,20) * 25);
             }
         }
     

@@ -6,6 +6,7 @@ import {enable_scroll, disable_scroll} from './utility';
 ****************************/
 
 export function animate_nav(isNav: boolean){
+    //TODO - ANIMATE NAV CONTENTS
     const tgt = '.nav';
     if(isNav){
         enable_scroll();
