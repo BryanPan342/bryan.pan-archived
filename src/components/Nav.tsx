@@ -4,6 +4,11 @@ import {NavProps} from '../utils/props';
 
 function Nav(props: NavProps){
     const theme_select = props.theme_select;
+    // TODO - ANIMATION OF ELEMENTS
+    // TODO - SWITCH TO TRANSLATION RATHER THAN WIDTH
+    // TODO - ADD THEME ICONS
+    // TODO - ADD HIGHLIGHT FOR CURRENT PATH (window.location.pathname)
+    // TODO - ADD HOVER TO ROUTES
     return(
         <div className='nav'>
             <div className='nav-content'>
