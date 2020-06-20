@@ -6,8 +6,6 @@ import hello from '../assets/hello.svg';
 function Home() {
     const size:{width: number, height: number} = useWindowSize();
     const [offset, setOffset] = useState(0);
-    const [parallax, setParallax] = useState(true);
-    var hello_original_bounding:any;
 
     var hello_parallax_condition = -1 * size.height;
 
@@ -17,7 +15,6 @@ function Home() {
         const about = document.getElementById("about_home");
         const about_bounding = about.getBoundingClientRect();
         const hello = document.getElementById('hello');
-        const hello_bounding = hello.getBoundingClientRect();
         
         if(showingHello){
             hide_hello();
@@ -29,18 +26,14 @@ function Home() {
             if(about_bounding.top > (hello_parallax_condition)){
                 hello.style.position = 'fixed';
                 if (parallax){
-                    console.log('fix');
                     document.body.classList.remove('parallax');
                     hello.style.top = "";
                 }
             }else if(about_bounding.top > (hello_parallax_condition * 3)){
                 hello.style.position = 'absolute';
                 if (!parallax){
-                    console.log('not fixed');
                     document.body.classList.add('parallax');
-                    console.log(hello.style);
                     hello.style.top = (-1 * hello_parallax_condition) + "px";
-                    console.log(hello.style.top);
                 } 
             }
         }
@@ -49,7 +42,6 @@ function Home() {
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll, { passive: true });
-        hello_original_bounding = document.getElementById('hello').getBoundingClientRect();
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
