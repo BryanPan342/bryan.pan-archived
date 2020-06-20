@@ -14,7 +14,7 @@ function Home() {
     const handleScroll = () => {
         const showingHello = document.body.classList.contains('showHello');
         const parallax = document.body.classList.contains('parallax');
-        const about = document.getElementById("about");
+        const about = document.getElementById("about_home");
         const about_bounding = about.getBoundingClientRect();
         const hello = document.getElementById('hello');
         const hello_bounding = hello.getBoundingClientRect();
@@ -68,7 +68,7 @@ function Home() {
                     </svg>
                 </div>
                 <div id='hello-block'></div>
-                <div className='body fullscreen' id='about'></div>
+                <div className='body fullscreen' id='about_home'></div>
             </div>
             <div className='body halfscreen' id='personal'>
                 <h1> Personal Stuff </h1>
