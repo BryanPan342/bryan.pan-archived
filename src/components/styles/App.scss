@@ -37,6 +37,15 @@ body {
   overflow: hidden !important;
 }
 
+.theader {
+  font-size: 60px;
+}
+
+.tbody {
+  font-weight: bold;
+  font-size: 30px;
+}
+
 /* 2. Layout - Page building blocks
 /* ---------------------------------------------------------- */
 
@@ -239,12 +248,36 @@ body {
 #home #about_home{
   height: 100%;
   background: var(--cooler-bg);
+
+  #about_wrapper {
+    height: 100vh;
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 4;
+
+    #blurb {
+      text-align:center;
+      width: 60%;
+    }
+  }
 }
 
 #home #personal, #home #skills{
   background: var(--mini-bg);
   h1{
     color: var(--mini-header);
+  }
+}
+
+#home .social {
+  img{
+    width: 30px;
+    height: 30px;
+    margin: 15px;
   }
 }
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {useWindowSize} from '../utils/hooks';
 import {hide_hello, show_hello} from '../utils/animation';
-import hello from '../assets/hello.svg';
+import Social from './social';
 
 function Home() {
     const size:{width: number, height: number} = useWindowSize();
@@ -60,7 +60,13 @@ function Home() {
                     </svg>
                 </div>
                 <div id='hello-block'></div>
-                <div className='body fullscreen' id='about_home'></div>
+                <div className='body fullscreen' id='about_home'>
+                    <div id='about_wrapper'>
+                        <img></img>
+                        <div id='blurb' className='tbody'>I’m a software developer. I enjoy making things just because. I study computer science at UCLA. I love coffee.</div>
+                        <Social/>
+                    </div>
+                </div>
             </div>
             <div className='body halfscreen' id='personal'>
                 <h1> Personal Stuff </h1>
