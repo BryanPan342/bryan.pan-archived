@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {useWindowSize} from '../utils/hooks';
 import {hide_hello, show_hello} from '../utils/animation';
-import Social from './social';
+import Social from './Social';
 
 function Home() {
     const size:{width: number, height: number} = useWindowSize();
