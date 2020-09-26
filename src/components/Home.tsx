@@ -61,11 +61,11 @@ function Home() {
                 </div>
                 <div id='hello-block'></div>
                 <div className='body fullscreen' id='about_home'>
-                    <div id='about_wrapper'>
+                    {/* <div id='about_wrapper'>
                         <img></img>
                         <div id='blurb' className='tbody'>I’m a software developer. I enjoy making things just because. I study computer science at UCLA. I love coffee.</div>
                         <Social/>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className='body halfscreen' id='personal'>
