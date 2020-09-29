@@ -32,7 +32,7 @@ function Loader(props: LoaderProps){
     
         setTimeout(()=>{
             close_loader(theme, m);
-        }, 1000 + t_offset + 1000);
+        }, 1500 + t_offset);
     }, []);
 
     return (
