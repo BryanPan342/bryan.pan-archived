@@ -24,7 +24,7 @@ function Loader(props: LoaderProps){
                     shoot_balls(t1, m);
                     shoot_balls(t2, m);
                     expand_center(t0, m);
-                }, 1000 + t_offset);
+                }, 500 + t_offset);
     
                 t_offset += (random(1,20) * 25);
             }
