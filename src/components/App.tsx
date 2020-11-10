@@ -13,8 +13,8 @@ import Header from './Header';
 import Footer from './Footer';
 import Nav from './Nav';
 
-import {animate_nav} from '../utils/animation';
-import {isValidTheme} from '../utils/utility';
+import {animate_nav, hello_block} from '../utils/animation';
+import {enable_scroll, isValidTheme} from '../utils/utility';
 import { useWindowSize } from '../utils/hooks';
 import './styles/App.scss';
 
@@ -47,7 +47,9 @@ function App() {
         if (isValidTheme(stored_theme) && stored_theme != theme){
             setTheme(stored_theme);
         }
-        body.classList.add(theme)
+        body.classList.add(theme);
+        body.classList.add('loaded', 'parallax');
+        hello_block(theme);
     },[]);
 
     /* HOOK FOR CHANGING THEME */
@@ -57,7 +59,7 @@ function App() {
 
     return (
         <div id='site-wrapper'>
-            <Loader theme={theme}></Loader>
+            {/* <Loader theme={theme}></Loader> */}
             <Header toggle_nav={toggle_nav}></Header>
             <Nav theme_select={theme_select}></Nav>
             <Switch>
